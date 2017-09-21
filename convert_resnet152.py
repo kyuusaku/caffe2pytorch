@@ -78,5 +78,7 @@ if __name__ == '__main__':
         if val == 0:
             print('warning: ignoring {}'.format(key))
 
-    model.update(new_state_dict)
+    model_dict = model.state_dict()
+    model_dict.update(new_state_dict)
+    model.load_state_dict(new_state_dict)
     torch.save(model.state_dict(), 'Places2_365_CNN.pth')
