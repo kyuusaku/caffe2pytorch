@@ -52,7 +52,7 @@ if __name__ == '__main__':
     
     prototxt = 'Places2-365-CNN.prototxt'
     caffemodel = 'Places2-365-CNN.caffemodel'
-    net = load_caffe(args.prototxt, args.caffemodel)
+    net = load_caffe(prototxt, caffemodel)
     caffe_keys = net.params.keys()
     print(caffe_keys)
     param_provider = CaffeParamProvider(net)
