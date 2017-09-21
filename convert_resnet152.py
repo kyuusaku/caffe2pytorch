@@ -9,7 +9,7 @@ def parse_param_name(p, var_name):
     if len(a) == 2:
         subith_conv = int(int(a[0]) / 3) + 1
         name = name % (1, subith_conv, 3, 3)
-        if int(a[0]) == 0:
+        if subith_conv == 1:
             name = name + '_s2'
         if a[-1] == 'weight':
             if int(a[0]) % 3 == 0:
@@ -63,7 +63,7 @@ if __name__ == '__main__':
     py_keys = model.state_dict().keys()
     print(py_keys)
 
-    print('caffe:{} keys, pytoch: {} keys'.format(len(caffe_keys),len(py_keys)))
+    print('caffe: {} keys, pytoch: {} keys'.format(len(caffe_keys),len(py_keys)))
 
     new_state_dict = OrderedDict()
     for var_name in py_keys:
