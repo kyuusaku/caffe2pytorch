@@ -67,8 +67,8 @@ if __name__ == '__main__':
 
     new_state_dict = OrderedDict()
     for var_name in py_keys[:]:
-    	name, data = parse_param_name(param_provider, var_name)
-    	new_state_dict[var_name] = torch.from_numpy(data).float()
+        name, data = parse_param_name(param_provider, var_name)
+        new_state_dict[var_name] = torch.from_numpy(data).float()
         print('copy param from {} to {}'.format(name, var_name))
         record_caffe[name] = record_caffe[name] + 1
 
