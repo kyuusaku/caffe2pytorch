@@ -63,7 +63,7 @@ if __name__ == '__main__':
     py_keys = model.state_dict().keys()
     print(py_keys)
 
-    print('caffe:{} keys, pytoch: {} keys'.format(len(caffe_keys),len(py_keys))
+    print('caffe:{} keys, pytoch: {} keys'.format(len(caffe_keys),len(py_keys)))
 
     new_state_dict = OrderedDict()
     for var_name in py_keys[:]:
