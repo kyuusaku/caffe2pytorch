@@ -66,7 +66,9 @@ if __name__ == '__main__':
     print('caffe:{} keys, pytoch: {} keys'.format(len(caffe_keys),len(py_keys)))
 
     new_state_dict = OrderedDict()
-    for var_name in py_keys[:]:
+    for var_name in py_keys:
+        if var_name == '16.1.weight':
+            break
         name, data = parse_param_name(param_provider, var_name)
         new_state_dict[var_name] = torch.from_numpy(data).float()
         print('copy param from {} to {}'.format(name, var_name))
